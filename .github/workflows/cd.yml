@@ -1,6 +1,6 @@
 # .github/workflows/cd.yml
 name: 'Deploy'     # Name of the action.
-on: ['deployment'] # Listen for deployment events.
+on: ['push'] # Listen for deployment events.
 jobs:
   deployment:
     runs-on: 'ubuntu-latest'
@@ -11,7 +11,7 @@ jobs:
       uses: azure/setup-helm@v1
       with:
         version: v3.8.1
-        
+
     # - name: custom packaging
     #   run: |
     #     VERSION=${{github.ref_name}}
