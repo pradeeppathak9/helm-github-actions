@@ -74,4 +74,6 @@ nodeSelector: {}
 
 tolerations: []
 
-affinity: {}
+# affinity: {}
+
+
