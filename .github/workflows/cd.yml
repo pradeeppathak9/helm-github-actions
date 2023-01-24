@@ -1,6 +1,10 @@
 # .github/workflows/cd.yml
 name: 'Deploy'     # Name of the action.
-on: ['push'] # Listen for deployment events.
+on: 
+  push:
+    branches:
+      - main
+      
 jobs:
   deployment:
     runs-on: 'ubuntu-latest'
@@ -17,11 +21,3 @@ jobs:
          chmod +x ./deploy.sh
          ./deploy.sh
       shell: bash
-
-    # - name: 'Deploy'
-    #   uses: 'deliverybot/helm@master'
-    #   with:
-    #     token: '${{ github.token }}'
-    #     chart: 'app'
-    #   env:
-    #     KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
