@@ -12,12 +12,11 @@ jobs:
       with:
         version: v3.8.1
 
-    # - name: custom packaging
-    #   run: |
-    #     VERSION=${{github.ref_name}}
-    #     rm -rf .cr-release-packages
-    #     mkdir -p .cr-release-packages
-    #     helm package charts/youtube-stats-chart --app-version=${VERSION:1} --version=${VERSION:1} --destination=.cr-release-packages
+    - name: deploy helm
+      run: |
+         chmod +x ./deploy.sh
+         ./deploy.sh
+      shell: bash
 
     # - name: 'Deploy'
     #   uses: 'deliverybot/helm@master'
