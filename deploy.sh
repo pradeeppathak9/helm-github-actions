@@ -1,4 +1,4 @@
 #!/bin/bash
-for each filename in /all-values do
+for each filename in ./all-values/*.yaml do
     echo $filename
-end for
+done
