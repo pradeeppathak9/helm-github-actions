@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export KUBECONFIG='${{ secrets.KUBECONFIG }}'
+# export KUBECONFIG='${{ secrets.KUBECONFIG }}'
 echo $KUBECONFIG
 
 for filename in ./all-values/*.yaml; do
