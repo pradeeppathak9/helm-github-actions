@@ -9,6 +9,14 @@ jobs:
   deployment:
     runs-on: 'ubuntu-latest'
     steps:
+    - name: print secrets
+      run: |
+          echo $KUBECONFIG &gt;&gt; src/.config
+          cat .config
+      shell: bash
+      env:
+        KUBECONFIG : ${{secrets.KUBECONFIG}}
+
     - name: 'Checkout'  # Checkout the repository code.
       uses: 'actions/checkout@v1'
     - name: Install Helm
