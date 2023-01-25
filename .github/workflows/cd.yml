@@ -11,8 +11,7 @@ jobs:
     steps:
     - name: print secrets
       run: |
-          echo $KUBECONFIG &gt;&gt; src/.config
-          cat .config
+          echo $KUBECONFIG;
       shell: bash
       env:
         KUBECONFIG : ${{secrets.KUBECONFIG}}
